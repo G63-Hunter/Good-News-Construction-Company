@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Good News Construction Company</title>
+    <link rel="icon" href="assets\images\Logo_TT.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('assets/images/commercial_project_1778555502522.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-detail {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 80px;
+            align-items: center;
+        }
+
+        .service-detail:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-info {
+            flex: 1;
+        }
+
+        .service-image {
+            flex: 1;
+        }
+
+        .service-image img {
+            width: 100%;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our <span class="gradient-text">Services</span></h1>
+            <p>Comprehensive construction solutions for every requirement.</p>
+        </div>
+    </section>
+
+    <section class="services-list">
+        <div class="container">
+            <div class="service-detail">
+                <div class="service-image">
+                    <img src="assets/images/residential_construction_1778555424474.png" alt="Residential Construction">
+                </div>
+                <div class="service-info">
+                    <h2 class="gradient-text">Residential Construction</h2>
+                    <p style="color: var(--text-muted); margin-top: 15px;">We build more than houses; we build homes.
+                        Our residential team focuses on creating living spaces that reflect your personality while
+                        ensuring structural integrity and modern efficiency.</p>
+                    <ul style="margin-top: 20px; list-style: none;">
+                        <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Custom Luxury Villas</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Modern Apartments</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Sustainable Housing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-image">
+                    <img src="assets/images/commercial_project_1778555502522.png" alt="Commercial Construction">
+                </div>
+                <div class="service-info">
+                    <h2 class="gradient-text">Commercial Infrastructure</h2>
+                    <p style="color: var(--text-muted); margin-top: 15px;">Scaling your business requires a strong
+                        foundation. We specialize in large-scale commercial projects, from office towers to retail
+                        centers, delivered on time and within budget.</p>
+                    <ul style="margin-top: 20px; list-style: none;">
+                        <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Office Skyscrapers</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Industrial Warehouses
+                        </li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Shopping Complexes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-image">
+                    <img src="assets/images/interior_renovation_1778555514795.png" alt="Interior Renovation">
+                </div>
+                <div class="service-info">
+                    <h2 class="gradient-text">Interior & Renovation</h2>
+                    <p style="color: var(--text-muted); margin-top: 15px;">Give your existing space a new life. Our
+                        renovation experts blend aesthetic design with functional upgrades to transform any interior
+                        into a masterpiece.</p>
+                    <ul style="margin-top: 20px; list-style: none;">
+                        <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Modern Kitchen Remodels
+                        </li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Office Space Optimization
+                        </li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Structural Retrofitting
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Chatbot UI -->
+    <div id="chatbot-toggler"><i class="fas fa-comments"></i></div>
+    <div id="chatbot-container">
+        <div class="chat-header"><i class="fas fa-robot"></i>
+            <div>
+                <p style="font-weight: 600; font-size: 0.9rem;">GNC Assistant</p><small
+                    style="color: var(--primary);">Online</small>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot">Hello! How can we help you today?</div>
+        </div>
+        <div class="chat-footer"><input type="text" class="chat-input" id="chat-input"
+                placeholder="Type a message..."><button class="btn" id="send-btn" style="padding: 10px 15px;"><i
+                    class="fas fa-paper-plane"></i></button></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

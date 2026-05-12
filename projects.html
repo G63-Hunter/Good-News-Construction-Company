@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects | Good News Construction Company</title>
+    <link rel="icon" href="assets\images\Logo_TT.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('assets/images/residential_construction_1778555424474.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .filter-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our <span class="gradient-text">Portfolio</span></h1>
+            <p>Witness the craftsmanship and scale of our completed works.</p>
+        </div>
+    </section>
+
+    <section class="projects-grid">
+        <div class="container">
+            <div class="filter-btns">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Commercial</button>
+                <button class="filter-btn">Residential</button>
+                <button class="filter-btn">Industrial</button>
+            </div>
+            <div class="grid">
+                <div class="project-card">
+                    <img src="assets/images/commercial_project_1778555502522.png" alt="Project 1">
+                    <div class="project-overlay">
+                        <h3>Skyline Corporate Center</h3>
+                        <p>Commercial | 2024</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/residential_construction_1778555424474.png" alt="Project 2">
+                    <div class="project-overlay">
+                        <h3>Emerald Heights</h3>
+                        <p>Residential | 2023</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/interior_renovation_1778555514795.png" alt="Project 3">
+                    <div class="project-overlay">
+                        <h3>Minimalist Loft</h3>
+                        <p>Interior | 2024</p>
+                    </div>
+                </div>
+                <!-- Additional Project Items (Reusing images for demo) -->
+                <div class="project-card">
+                    <img src="assets/images/commercial_project_1778555502522.png" alt="Project 4">
+                    <div class="project-overlay">
+                        <h3>The Hub Mall</h3>
+                        <p>Commercial | 2022</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/residential_construction_1778555424474.png" alt="Project 5">
+                    <div class="project-overlay">
+                        <h3>Oakwood Estates</h3>
+                        <p>Residential | 2021</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/hero_construction_modern_1778555409937.png" alt="Project 6">
+                    <div class="project-overlay">
+                        <h3>Port Bridge</h3>
+                        <p>Infrastructure | 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Chatbot UI -->
+    <div id="chatbot-toggler"><i class="fas fa-comments"></i></div>
+    <div id="chatbot-container">
+        <div class="chat-header"><i class="fas fa-robot"></i>
+            <div>
+                <p style="font-weight: 600; font-size: 0.9rem;">GNC Assistant</p><small
+                    style="color: var(--primary);">Online</small>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot">Hello! How can we help you today?</div>
+        </div>
+        <div class="chat-footer"><input type="text" class="chat-input" id="chat-input"
+                placeholder="Type a message..."><button class="btn" id="send-btn" style="padding: 10px 15px;"><i
+                    class="fas fa-paper-plane"></i></button></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

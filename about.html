@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Good News Construction Company</title>
+    <link rel="icon" href="assets\images\Logo_TT.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('assets/images/hero_construction_modern_1778555409937.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>About <span class="gradient-text">Us</span></h1>
+            <p>Our journey, our values, and our commitment to excellence.</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="assets/images/residential_construction_1778555424474.png" alt="Our Team">
+                </div>
+                <div class="about-text">
+                    <h2 style="margin-bottom: 20px;">Dedicated to <span class="gradient-text">Quality</span></h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Founded on the principles of integrity and
+                        craftsmanship, Good News Construction Company has been a leader in the industry for over a
+                        decade. We believe that every project is a partnership, and our goal is to exceed expectations
+                        through innovation and meticulous attention to detail.</p>
+                    <p style="color: var(--text-muted);">From the initial blueprint to the final walkthrough, we ensure
+                        "For Your Quality Experience" is not just a motto, but a promise kept.</p>
+                    <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <h3 class="gradient-text">150+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div>
+                            <h3 class="gradient-text">50+</h3>
+                            <p>Expert Architects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Chatbot UI (Same as index) -->
+    <div id="chatbot-toggler"><i class="fas fa-comments"></i></div>
+    <div id="chatbot-container">
+        <div class="chat-header"><i class="fas fa-robot"></i>
+            <div>
+                <p style="font-weight: 600; font-size: 0.9rem;">GNC Assistant</p><small
+                    style="color: var(--primary);">Online</small>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot">Hello! How can we help you today?</div>
+        </div>
+        <div class="chat-footer"><input type="text" class="chat-input" id="chat-input"
+                placeholder="Type a message..."><button class="btn" id="send-btn" style="padding: 10px 15px;"><i
+                    class="fas fa-paper-plane"></i></button></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
