@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Good News Construction Company</title>
-    <link rel="icon" href="assets\images\Logo_TT.png">
+    <link rel="icon" href="assets/images/Logo_TT.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -98,44 +98,44 @@
                         <i class="fas fa-phone-alt"></i>
                         <div>
                             <h4>Phone</h4>
-                            <p style="color: var(--text-muted);">+1 (234) 567-890</p>
+                            <p style="color: var(--text-muted);">+(256) 703044653, +(256) 783332503</p>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p style="color: var(--text-muted);">info@goodnewsconstruction.com</p>
+                            <p style="color: var(--text-muted);"><a href="mailto:nyongahannington@gmail.com" style="color: inherit; text-decoration: none;">nyongahannington@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Office</h4>
-                            <p style="color: var(--text-muted);">123 Construction Ave, Builder City, NY 10001</p>
+                            <p style="color: var(--text-muted);">Entebbe Garunga, katabi town C</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-form">
-                    <form id="contact-form">
+                    <form id="contact-form" action="https://formspree.io/f/mqakvjge" method="POST">
                         <div class="form-group">
                             <label>Full Name</label>
-                            <input type="text" placeholder="John Doe" required>
+                            <input type="text" name="name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="email" placeholder="john@example.com" required>
+                            <input type="email" name="email" placeholder="john@example.com" required>
                         </div>
                         <div class="form-group">
                             <label>Subject</label>
-                            <input type="text" placeholder="Project Inquiry">
+                            <input type="text" name="subject" placeholder="Project Inquiry">
                         </div>
                         <div class="form-group">
                             <label>Message</label>
-                            <textarea rows="5" placeholder="Tell us about your project..." required></textarea>
+                            <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
                         </div>
-                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                        <button type="submit" id="submit-btn" class="btn" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -164,10 +164,44 @@
 
     <script src="main.js"></script>
     <script>
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Thank you for your message! Our team will contact you soon.');
-            e.target.reset();
+            
+            const formData = new FormData(contactForm);
+            const originalBtnText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Thank you for your message! Our team will contact you soon.');
+                    contactForm.reset();
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        alert(data.errors.map(error => error.message).join(", "));
+                    } else {
+                        alert('Oops! There was a problem submitting your form. Please try again.');
+                    }
+                }
+            } catch (error) {
+                alert('Oops! There was a problem submitting your form. Please check your connection and try again.');
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     </script>
 </body>

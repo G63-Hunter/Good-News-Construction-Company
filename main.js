@@ -55,7 +55,11 @@ async function init() {
         const appendMessage = (text, sender) => {
             const msgDiv = document.createElement('div');
             msgDiv.className = `message ${sender}`;
-            msgDiv.textContent = text;
+            if (sender === 'bot') {
+                msgDiv.innerHTML = text;
+            } else {
+                msgDiv.textContent = text;
+            }
             chatBody.appendChild(msgDiv);
             chatBody.scrollTop = chatBody.scrollHeight;
         };
@@ -72,13 +76,13 @@ async function init() {
                 const msg = userMsg.toLowerCase();
 
                 if (msg.includes('service') || msg.includes('do you do')) {
-                    botResponse = "We offer residential, commercial, and renovation services. You can check our Services page for more details!";
+                    botResponse = "We offer residential, commercial, and renovation services. You can check our <a href='services.html' style='color: var(--primary);'>Services</a> page for more details!";
                 } else if (msg.includes('contact') || msg.includes('phone') || msg.includes('email')) {
-                    botResponse = "You can reach us at info@goodnewsconstruction.com or call us at +1 (234) 567-890.";
+                    botResponse = "You can reach us at <a href='mailto:nyongahannington@gmail.com' style='color: var(--primary);'>nyongahannington@gmail.com</a> or call us at +(256) 703044653 or +(256) 783332503.";
                 } else if (msg.includes('hello') || msg.includes('hi')) {
                     botResponse = "Hello! How can Good News Construction assist you with your project today?";
                 } else if (msg.includes('project')) {
-                    botResponse = "We have completed several high-end projects. Check out our Projects page!";
+                    botResponse = "We have completed several high-end projects. Check out our <a href='projects.html' style='color: var(--primary);'>Projects</a> page!";
                 }
 
                 appendMessage(botResponse, 'bot');
