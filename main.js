@@ -23,6 +23,29 @@ async function init() {
         }
     });
 
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinksList = document.getElementById('nav-links');
+
+    if (menuBtn && navLinksList) {
+        menuBtn.addEventListener('click', () => {
+            navLinksList.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksList.classList.remove('active');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+    }
+
     // Header Scroll Effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {

@@ -116,6 +116,18 @@ nav {
     border-bottom: 2px solid var(--primary);
 }
 
+.menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.menu-btn:hover {
+    color: var(--primary);
+}
+
 /* --- Hero Section --- */
 .hero {
     height: 100vh;
@@ -289,6 +301,14 @@ nav {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 400px) {
+    #chatbot-container {
+        width: 90%;
+        right: 5%;
+        height: 400px;
+    }
+}
+
 #chatbot-container.active {
     transform: scale(1);
 }
@@ -404,12 +424,87 @@ footer {
 }
 
 @media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--bg-dark);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: 0.5s ease;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-btns .btn {
+        margin-left: 0 !important;
+        text-align: center;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        height: 300px;
+    }
+
+    .about-grid,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .service-detail {
+        flex-direction: column !important;
+        gap: 30px;
+    }
+
+    .page-header {
+        height: 30vh;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
     }
 }
 
@@ -532,5 +627,4 @@ footer {
         right: 20px;
         top: 20px;
     }
-}
 }
