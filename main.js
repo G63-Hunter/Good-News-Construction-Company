@@ -95,6 +95,86 @@ async function init() {
         });
     }
 
+    // --- Slideshow Initialization ---
+    const injectSlideshow = () => {
+        if (document.getElementById('slideshow-modal')) return;
+        const modalHtml = `
+            <div id="slideshow-modal" class="slideshow-modal">
+                <div class="slideshow-content">
+                    <span class="close-slideshow">&times;</span>
+                    <div class="slideshow-nav prev-btn"><i class="fas fa-chevron-left"></i></div>
+                    <img id="slideshow-img" src="" alt="Slideshow Image">
+                    <div class="slideshow-nav next-btn"><i class="fas fa-chevron-right"></i></div>
+                    <div class="image-counter"><span id="current-index">1</span> / <span id="total-images">1</span></div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+    };
+
+    injectSlideshow();
+
+    const slideshowModal = document.getElementById('slideshow-modal');
+    const slideshowImg = document.getElementById('slideshow-img');
+    const closeBtn = document.querySelector('.close-slideshow');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const currentIndexSpan = document.getElementById('current-index');
+    const totalImagesSpan = document.getElementById('total-images');
+
+    let currentIdx = 0;
+    // Get all images that should be in the slideshow (project cards and service images)
+    const galleryImages = Array.from(document.querySelectorAll('.project-card img, .service-image img'));
+
+    if (galleryImages.length > 0 && slideshowModal) {
+        totalImagesSpan.textContent = galleryImages.length;
+
+        const updateSlideshow = () => {
+            slideshowImg.src = galleryImages[currentIdx].src;
+            currentIndexSpan.textContent = currentIdx + 1;
+        };
+
+        const openSlideshow = (index) => {
+            currentIdx = index;
+            updateSlideshow();
+            slideshowModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeSlideshow = () => {
+            slideshowModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+
+        const nextImage = () => {
+            currentIdx = (currentIdx + 1) % galleryImages.length;
+            updateSlideshow();
+        };
+
+        const prevImage = () => {
+            currentIdx = (currentIdx - 1 + galleryImages.length) % galleryImages.length;
+            updateSlideshow();
+        };
+
+        galleryImages.forEach((img, index) => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => openSlideshow(index));
+        });
+
+        nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+        prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+        closeBtn.addEventListener('click', closeSlideshow);
+        slideshowModal.addEventListener('click', (e) => { if (e.target === slideshowModal) closeSlideshow(); });
+
+        document.addEventListener('keydown', (e) => {
+            if (slideshowModal.style.display === 'flex') {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeSlideshow();
+            }
+        });
+    }
+
     // Intersection Observer for Scroll Animations
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {

@@ -15,100 +15,18 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('assets/images/residential_construction_1778555424474.png');
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('assets/images/Actual/_Q3A8711.jpg');
             background-size: cover;
             background-position: center;
         }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(8px);
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--glass-border);
-            max-width: 800px;
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            animation: modalSlide 0.4s ease-out;
-        }
-
-        @keyframes modalSlide {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .close-modal {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .modal-body {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            padding: 40px;
-        }
-
-        .modal-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .modal-info h2 {
-            margin-bottom: 15px;
-        }
-
-        .modal-info p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .project-meta {
-            display: grid;
-            gap: 10px;
-        }
-
-        .meta-item {
-            display: flex;
-            gap: 10px;
-            font-size: 0.9rem;
-        }
-
-        .meta-item i {
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .modal-body {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        /* Project Card Adjustments */
         .project-card {
             cursor: pointer;
+        }
+        
+        .project-card:hover .project-overlay {
+            display: none;
         }
     </style>
 </head>
@@ -128,88 +46,121 @@
     <section class="projects-grid">
         <div class="container">
             <div class="grid">
-                <div class="project-card" 
-                     data-title="Skyline Corporate Center" 
-                     data-desc="A state-of-the-art commercial hub designed for modern enterprises. Featuring sustainable energy solutions and a sleek glass facade." 
-                     data-meta='{"Category": "Commercial", "Year": "2024", "Location": "Kampala Central"}'>
-                    <img src="assets/images/commercial_project_1778555502522.png" alt="Project 1">
-                    <div class="project-overlay">
-                        <h3>Skyline Corporate Center</h3>
-                        <p>Commercial | 2024</p>
-                    </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8658.jpg" alt="Project Image">
                 </div>
-                <div class="project-card" 
-                     data-title="Emerald Heights" 
-                     data-desc="Luxury residential complex offering premium living spaces with panoramic city views and world-class amenities." 
-                     data-meta='{"Category": "Residential", "Year": "2023", "Location": "Entebbe Road"}'>
-                    <img src="assets/images/residential_construction_1778555424474.png" alt="Project 2">
-                    <div class="project-overlay">
-                        <h3>Emerald Heights</h3>
-                        <p>Residential | 2023</p>
-                    </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8662.jpg" alt="Project Image">
                 </div>
-                <div class="project-card" 
-                     data-title="Minimalist Loft" 
-                     data-desc="A complete interior renovation focusing on minimalist aesthetics and open-concept living. Optimized for light and space." 
-                     data-meta='{"Category": "Interior", "Year": "2024", "Location": "Nakasero"}'>
-                    <img src="assets/images/interior_renovation_1778555514795.png" alt="Project 3">
-                    <div class="project-overlay">
-                        <h3>Minimalist Loft</h3>
-                        <p>Interior | 2024</p>
-                    </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8666.jpg" alt="Project Image">
                 </div>
-                <div class="project-card" 
-                     data-title="The Hub Mall" 
-                     data-desc="A sprawling retail destination featuring a blend of international brands and local boutiques, designed for high footfall and accessibility." 
-                     data-meta='{"Category": "Commercial", "Year": "2022", "Location": "Kiwatule"}'>
-                    <img src="assets/images/commercial_project_1778555502522.png" alt="Project 4">
-                    <div class="project-overlay">
-                        <h3>The Hub Mall</h3>
-                        <p>Commercial | 2022</p>
-                    </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8669.jpg" alt="Project Image">
                 </div>
-                <div class="project-card" 
-                     data-title="Oakwood Estates" 
-                     data-desc="Sustainable gated community featuring eco-friendly homes and lush green spaces. A perfect blend of nature and modern living." 
-                     data-meta='{"Category": "Residential", "Year": "2021", "Location": "Wakiso"}'>
-                    <img src="assets/images/residential_construction_1778555424474.png" alt="Project 5">
-                    <div class="project-overlay">
-                        <h3>Oakwood Estates</h3>
-                        <p>Residential | 2021</p>
-                    </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8672.jpg" alt="Project Image">
                 </div>
-                <div class="project-card" 
-                     data-title="Port Bridge" 
-                     data-desc="A critical infrastructure project connecting key industrial zones. Built with high-grade materials to withstand heavy traffic and environmental stress." 
-                     data-meta='{"Category": "Infrastructure", "Year": "2025", "Location": "Jinja"}'>
-                    <img src="assets/images/hero_construction_modern_1778555409937.png" alt="Project 6">
-                    <div class="project-overlay">
-                        <h3>Port Bridge</h3>
-                        <p>Infrastructure | 2025</p>
-                    </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8686.jpg" alt="Project Image">
                 </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8691.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8693.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8695.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8697.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8698.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8707.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/_Q3A8710.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-10-43.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-10-54.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-10-56.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-11-07.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-11-12.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-11-15.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-11-23.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-11-46.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-11-51.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-11-54.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-11-56.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-11-59.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-12-03.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-12-05.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-12-08.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-12-15.jpg" alt="Project Image">
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Actual/photo_2026-05-15_22-12-18.jpg" alt="Project Image">
+                </div>
+            </div>
+            <div class="view-more-container" style="text-align: center; margin-top: 50px;">
+                <button id="view-more-btn" class="btn">View More Projects</button>
             </div>
         </div>
     </section>
 
-    <!-- Project Modal -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-body">
-                <div class="modal-img">
-                    <img id="modal-image" src="" alt="Project Detail">
-                </div>
-                <div class="modal-info">
-                    <h2 id="modal-title" class="gradient-text"></h2>
-                    <p id="modal-description"></p>
-                    <div class="project-meta" id="modal-meta">
-                        <!-- Meta items will be injected here -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <style>
+        .grid .project-card:nth-child(n+10) {
+            display: none;
+        }
+
+        .grid.show-all .project-card:nth-child(n+10) {
+            display: block;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+
+    <script>
+        document.getElementById('view-more-btn').addEventListener('click', function() {
+            const grid = document.querySelector('.grid');
+            grid.classList.add('show-all');
+            this.parentElement.style.display = 'none';
+        });
+    </script>
 
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
@@ -230,57 +181,7 @@
                 placeholder="Type a message..."><button class="btn" id="send-btn" style="padding: 10px 15px;"><i
                     class="fas fa-paper-plane"></i></button></div>
     </div>
-
     <script src="main.js"></script>
-    <script>
-        const modal = document.getElementById('project-modal');
-        const closeModal = document.querySelector('.close-modal');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        projectCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const title = card.getAttribute('data-title');
-                const desc = card.getAttribute('data-desc');
-                const meta = JSON.parse(card.getAttribute('data-meta'));
-                const img = card.querySelector('img').src;
-
-                document.getElementById('modal-title').textContent = title;
-                document.getElementById('modal-description').textContent = desc;
-                document.getElementById('modal-image').src = img;
-
-                const metaContainer = document.getElementById('modal-meta');
-                metaContainer.innerHTML = '';
-                
-                const icons = {
-                    "Category": "fa-tag",
-                    "Year": "fa-calendar-alt",
-                    "Location": "fa-map-marker-alt"
-                };
-
-                for (const [key, value] of Object.entries(meta)) {
-                    const item = document.createElement('div');
-                    item.className = 'meta-item';
-                    item.innerHTML = `<i class="fas ${icons[key] || 'fa-info-circle'}"></i> <span><strong>${key}:</strong> ${value}</span>`;
-                    metaContainer.appendChild(item);
-                }
-
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
 </body>
 
 </html>
